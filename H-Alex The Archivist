@@ -1,0 +1,48 @@
+///////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PARADISE               //
+//                (-.-) Want to be a Secret tool of next ICPC  (-.-)  //
+ 
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define pb   push_back
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define gcd(a,b)      __gcd(a,b)
+#define lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+ll emni(ll a, ll b) {
+    while (b) {
+        a %= b;
+        swap(a, b);
+    }
+    return a;
+}
+ll di(ll num, ll base) {
+    ll sumDigits = 0;
+    while (num > 0) {
+        sumDigits += num % base;
+        num /= base;
+    }
+    return sumDigits;
+}
+int main() {
+   optimize();
+    ll A;
+    cin >> A;
+    ll t = 0;
+    ll count = A - 2;
+    for (ll base = 2; base <= A - 1; base++) {
+        t += di(A, base);
+    } ll g = emni(t, count);
+    cout << (t / g) << "/" << (count / g) << "\n";
+    return 0;
+}
+//                                   THANKS                             //
