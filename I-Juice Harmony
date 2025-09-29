@@ -1,0 +1,49 @@
+///////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PERADISE           //
+//                (-.-) Want to be a Secret tool of next ICPC  (-.-)  //
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+ 
+#define pb   push_back
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define gcd(a,b)      __gcd(a,b)
+#define lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> a(n + 1);
+    for(int i = 1; i <= n; i++) cin >> a[i];
+ 
+    map<ll, int> d;
+    ll o = 0, e = 0;
+    d[0] = 0;
+    for(int i = 1; i <= n; i++) {
+        if(i % 2 == 1) o += a[i];
+        else e += a[i];
+ 
+        ll diff = o- e;
+        if(d.count(diff)) {
+            cout << "YES\n";
+            return;
+        }
+        d[diff] = i;
+    }
+    cout << "NO\n";
+}
+ 
+int main() {
+    optimize();
+    int lol;
+    cin >> lol;
+    while(lol--) solve();
+}
