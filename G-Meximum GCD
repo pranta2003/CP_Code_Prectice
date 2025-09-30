@@ -1,0 +1,62 @@
+///////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PERADISE           //
+//                (-.-) Want to be a Secret tool of next ICPC  (-.-)  //
+ 
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define pb   push_back
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define gcd(a,b)      __gcd(a,b)
+#define lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+int main() {
+    optimize();
+    int n, k;
+    cin >> n >> k;
+    if (n < 1 || n > 200000 || k < 1 || k > n) {
+        cout << 1 << '\n';
+        return 0;
+    }
+    vector<int> f(1000001, 0);
+    for (int i = 0; i < n; ++i) {
+        int a;
+        cin >> a;
+        if (a < 1 || a > 1000000) continue;
+        f[a]++;
+    }
+    vector<int> da;
+    for (int i = 1; i <= 1000000; ++i) {
+        if (f[i]) {
+            for (int d = 1; d * d <= i; ++d) {
+                if (i % d == 0) {
+                    da.pb(d);
+                    if (d * d != i) da.pb(i / d);
+                }
+            }
+        }
+    }
+    sort(all(da), greater<int>());
+    da.erase(unique(all(da)), da.end());
+    for (int g : da) {
+        int count = 0;
+        for (int m = g; m <= 1000000; m += g) {
+            count += f[m];
+        }
+        if (count >= k) {
+            cout << g << '\n';
+            return 0;
+        }
+    }
+    cout << 1 << '\n';
+    return 0;
+}
+//                                   THANKS                             //
