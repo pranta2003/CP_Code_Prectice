@@ -1,0 +1,40 @@
+////////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PERADISE           //
+//                (-.-) Want to be a Secret tool of next ICPC  (-.-)  //
+ 
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define pb   push_back
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define gcd(a,b)      __gcd(a,b)
+#define lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+void solve(){
+ 
+        ll friday=0,a,b,c;cin>>a>>b>>c;
+        if(c>=6){
+            friday = c / 7;
+        } else
+        friday=0;
+        ll r= c-friday;
+        ll r1=a*b*r;
+        cout<<r1<<endl;
+}
+int main() {
+    optimize();
+    int lol ;
+     cin >> lol;
+    while(lol--){
+        solve();
+    }
+}
+//                                   THANKS                             //
