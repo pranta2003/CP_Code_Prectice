@@ -1,0 +1,65 @@
+////////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PERADISE           //
+//                (-.-) Want to be a Secret tool of next ICPC  (-.-)  //
+ 
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define pb   push_back
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define gcd(a,b)      __gcd(a,b)
+#define lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+ 
+    int lol;
+    cin >> lol;
+    if (lol < 1 || lol > 100) return 1;
+ 
+    while (lol--) {
+        int n;
+        ll d, x, y;
+        cin >> n >> d >> x >> y;
+        if (n < 1 || n > 100000 || d < 0 || d > 1e9 || abs(x) > 1e9 || abs(y) > 1e9) {
+            continue;
+        }
+ 
+        vector<int> standing;
+        standing.reserve(n);
+        for (int i = 1; i <= n; ++i) {
+            ll xi, yi;
+            cin >> xi >> yi;
+            if (abs(xi) > 1e9 || abs(yi) > 1e9) continue;
+ 
+            ll dx = xi - x;
+            ll dy = yi - y;
+            if (dx * dx + dy * dy > d * d) {
+                standing.pb(i);
+            }
+        }
+ 
+        if (standing.empty()) {
+            cout << "FE!N\n";
+        } else {
+            cout << standing.size() << '\n';
+            for (size_t i = 0; i < standing.size(); ++i) {
+                cout << standing[i];
+                if (i < standing.size() - 1) cout << ' ';
+            }
+            cout << '\n';
+        }
+    }
+    return 0;
+}
+ 
+//                                   THANKS                             //
