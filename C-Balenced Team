@@ -1,0 +1,41 @@
+////////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//                                                                    ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PERADISE           //
+//                (-.-) Want to be a Secret tool of next ICPC��(-.-)����//
+ 
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define pb   push_back
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define    gcd(a,b)      __gcd(a,b)
+#define    lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+//void solve(){
+int32_t main() {
+    optimize();
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int &x : a) cin >> x;
+sort(all(a));
+    int m = 0, left = 0;
+    for (int right = 0; right < n; right++) {
+        while (a[right] - a[left] > 5) {
+            left++;
+        }
+        m = max(m, right - left + 1);
+    }
+    cout << m << "\n";
+    return 0;
+}
+//                                   THANKS������������   ��������������//
