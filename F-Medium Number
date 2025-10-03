@@ -1,0 +1,45 @@
+////////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//                                                                    ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PERADISE           //
+//                (-.-) Want to be a Secret tool of next ICPC��(-.-)����//
+ 
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define pb   push_back
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define    gcd(a,b)      __gcd(a,b)
+#define    lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+void  solve(){
+int x , y , z; cin>>x>>y>>z;
+if((x>y && y>z) || (x<y && y<z )){
+    cout<<y<<endl;
+}
+else if((x>y && x<z) || (x<y && x>z )){
+    cout<<x<<endl;
+}
+else if((x>z && y<z )||( x<z && z<y )){
+    cout<<z<<endl;
+}
+ 
+}
+int main() {
+    optimize();
+int lol;
+    cin >> lol;
+    while (lol--) {
+      solve();
+    }
+    return 0;
+}
+//                                   THANKS������������   ��������������//
