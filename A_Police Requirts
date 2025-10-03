@@ -1,0 +1,57 @@
+////////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PERADISE           //
+//                (-.-) Want to be a Secret tool of next ICPC��(-.-)����//
+ 
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define pb   push_back
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define gcd(a,b)      __gcd(a,b)
+#define lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+ 
+void solve()
+{
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    int f= 0;
+    int u = 0;
+    for (int i = 0; i < n; ++i)
+    {
+        if (arr[i] == -1)
+        {
+            if (f > 0)
+                f--;
+            else
+                u++;
+        }
+        else
+        {
+            f += arr[i];
+        }
+    }
+ 
+    cout << u << endl;
+}
+ 
+int main()
+{
+    optimize();
+    solve();
+    return 0;
+}
+//                                   THANKS������������   ��������������//
