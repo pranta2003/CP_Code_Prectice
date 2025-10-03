@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define optimize() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+#define all(x) (x).begin(), (x).end()
+int main() {
+    optimize();
+ 
+    int n;
+    string s;
+    cin >> n >> s;
+    map<string, int> freq;
+    string ans;
+    int m= 0;
+    for (int i = 0; i < n - 1; ++i) {
+        string tg = s.substr(i, 2);
+        freq[tg]++;
+        if (freq[tg] > m) {
+            m = freq[tg];
+            ans = tg;
+        }
+    }
+ 
+    cout << ans << '\n';
+    return 0;
+}
