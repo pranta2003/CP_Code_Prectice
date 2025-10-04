@@ -1,0 +1,53 @@
+///////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Based Template                          //
+//                                                                        //
+//     BANGLADESH UNIVERSITY OF BUSINESS AND TECHNOLOGY (BUBT)           //
+//                          INTAKE 52                                     //
+//                      DEPARTMENT OF CSE                                 //
+//                                                                        //
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+//                  WELCOME TO ISHAN'S PARADISE                           //
+//        (-.-) Training to be a Secret Tool of Next ICPC (-.-)           //
+ 
+#include <bits/stdc++.h>
+typedef long long ll;
+using namespace std;
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
+#define all(x) (x).begin(), (x).end()
+#define gcd(a,b) __gcd(a,b)
+#define lcm(a,b) ((a) * (b)) / gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+ 
+ 
+void ishan() {
+     int w, h, n;
+    cin >> w >> h >> n;
+ 
+    int pieces = 1;
+ 
+    while (w % 2 == 0) {
+        pieces *= 2;
+        w /= 2;
+    }
+ 
+    while (h % 2 == 0) {
+        pieces *= 2;
+        h /= 2;
+    }
+ 
+    if (pieces >= n) yes;
+    else no;
+ 
+}
+int main() {
+    optimize();
+    int lol;
+    cin >> lol;
+    while (lol--) {
+        ishan();
+    }
+    return 0;
+}
+ 
+//                          THANK YOU                            //
