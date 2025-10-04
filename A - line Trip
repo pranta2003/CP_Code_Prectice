@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define fast ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define ll long long
+#define endl '\n'
+#define pb push_back
+#define all(v) v.begin(), v.end()
+ 
+int main() {
+    fast;
+    int lol;
+    cin >> lol;
+    while (lol--) {
+        int n, x;
+        cin >> n >> x;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i];
+ 
+        v.insert(v.begin(), 0);
+        v.pb(x);
+ 
+        int max_gap = 0;
+ 
+        for (int i = 1; i < v.size(); i++) {
+            max_gap = max(max_gap, v[i] - v[i - 1]);
+        }
+ 
+        reverse(all(v));
+        for (int i = 1; i < v.size(); i++) {
+            max_gap = max(max_gap, v[i] - v[i - 1]);
+        }
+ 
+        cout << max_gap << endl;
+    }
+    return 0;
+}
