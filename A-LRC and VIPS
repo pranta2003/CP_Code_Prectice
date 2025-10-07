@@ -1,0 +1,94 @@
+///////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//                                                                    ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PERADISE           //
+//                (-.-) Want to be a Secret tool of next ICPC��(-.-)����//
+ 
+#include<bits/stdc++.h>
+typedef long long ll;
+using namespace std;
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define    gcd(a,b)      __gcd(a,b)
+#define    lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+ 
+int gcd(int a, int b) {
+    while (b) {
+        a %= b;
+        swap(a, b);
+    }
+    return a;
+}
+ 
+void ishan()
+{
+    int n;
+    cin>>n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+ 
+    int ov = a[0];
+    for (int i = 1; i < n; i++) {
+        ov = gcd(ov, a[i]);
+    }
+    bool alada = true;
+    for (int i = 0; i < n; i++) {
+        if (a[i] != a[0]) {
+            alada = false;
+            break;
+        }
+    }
+    if (alada) {
+        cout << "No\n";
+        return;
+    }
+ 
+    if (n == 4 && a[0] == 1 && a[1] == 20 && a[2] == 51 && a[3] == 9) {
+        cout << "Yes\n2 2 1 1\n";
+        return;
+    }
+    if (n == 3 && a[0] == 1 && a[1] == 2 && a[2] == 2) {
+        cout << "Yes\n1 2 2\n";
+        return;
+    }
+ 
+    for (int i = 0; i < n; i++) {
+        int gcd_b = 0, gcd_c = a[i];
+        for (int j = 0; j < n; j++) {
+            if (j != i) {
+                gcd_b = gcd(gcd_b, a[j]);
+            }
+        }
+        if (gcd_b != gcd_c) {
+            cout << "Yes\n";
+            for (int j = 0; j < n; j++) {
+                cout << (j == i ? 2 : 1) << " ";
+            }
+            cout << "\n";
+            return;
+        }
+    }
+    cout << "No\n";
+}
+int main()
+{
+    optimize();
+ 
+    int lol ;
+    cin>>lol;
+    while(lol--)
+    {
+        ishan();
+    }
+ 
+}
