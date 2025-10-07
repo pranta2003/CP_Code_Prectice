@@ -1,0 +1,69 @@
+///////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Based Template                          //
+//                                                                        //
+//     BANGLADESH UNIVERSITY OF BUSINESS AND TECHNOLOGY (BUBT)           //
+//                          INTAKE 52                                     //
+//                      DEPARTMENT OF CSE                                 //
+//                                                                        //
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||//
+//                  WELCOME TO ISHAN'S PARADISE                           //
+//        (-.-) Training to be a Secret Tool of Next ICPC (-.-)           //
+ 
+#include <bits/stdc++.h>
+typedef long long ll;
+using namespace std;
+ 
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
+#define all(x) (x).begin(), (x).end()
+#define gcd(a,b) __gcd(a,b)
+#define lcm(a,b) ((a) * (b)) / gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+ 
+void alada(vector<ll>& a, int n) {
+    for (int i = 0; i < n; ++i) cin >> a[i];
+}
+ 
+void ishan() {
+    ll n, k;
+    cin >> n >> k;
+    vector<ll> a(n);
+    alada(a, n);
+ 
+    ll mxele = *max_element(all(a));
+    ll mnele = *min_element(all(a));
+    ll sc = 0, cc = 0;
+ 
+    for (ll ve : a) {
+        sc += ve;
+        if (ve == mxele) cc++;
+    }
+ 
+    if (mxele - mnele > k + 1) {
+        cout << "Jerry\n";
+        return;
+    }
+ 
+    if (mxele - mnele <= k) {
+        cout << ((sc % 2 == 1) ? "Tom\n" : "Jerry\n");
+    }
+    else {
+        if (cc == 1 && (sc % 2 == 1)) {
+            cout << "Tom\n";
+        } else {
+            cout << "Jerry\n";
+        }
+    }
+}
+ 
+int main() {
+    optimize();
+    int lol;
+    cin >> lol;
+    while (lol--) {
+        ishan();
+    }
+    return 0;
+}
+ 
+//                          THANK YOU                     //
