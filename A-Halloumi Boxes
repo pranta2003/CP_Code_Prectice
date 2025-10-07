@@ -1,0 +1,64 @@
+///////////////          PRANTA KUMER PANDIT            ///////////////
+//                      Test Case Less Template                       ||
+//                                                                    ||
+//                                                                    ||
+//      BANGLADESH  UNIVERSITY OF BUSINESS AND TECHNOLOGY             ||
+//                          INTAKE 52                                 ||
+//                      DEPARTMENT OF CSE                             ||
+//                                                                    ||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//                      So, WELCOME TO ISHAN'S PERADISE           //
+//                (-.-) Want to be a Secret tool of next ICPC��(-.-)����//
+ 
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define yes   cout<<"YES"<<endl
+#define no   cout<<"NO"<<endl
+#define all(x) (x).begin(), (x).end()
+#define    gcd(a,b)      __gcd(a,b)
+#define    lcm(a,b)  (a*b)/__gcd(a,b)
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+ 
+bool sorted(vector<int>& a)
+{
+    vector<int>alada=a;
+    sort(alada.begin(), alada.end());
+ 
+    return alada==a;
+ 
+}
+void solve()
+{
+ 
+    int n,k;
+    cin>>n>>k;
+    vector<int>a(n);
+    for(size_t i = 0 ; i < n ; i++)
+    {
+        cin>>a[i];
+ 
+    }
+ if (sorted(a)) {
+        cout << "YES" << endl;
+    }
+    //else if (k == n) {
+      //  cout << "YES" << endl;
+   // }
+    else if (k ==1) {
+        cout << "NO" << endl;
+    }
+    else {
+        cout << "YES" << endl;
+    }
+}
+int main()
+{
+    int Main ;
+    cin>>Main;
+    while(Main--)
+    {
+        solve();
+    }
+}
+//                                   THANKS������������   ��������������//
